@@ -5,14 +5,14 @@
 #include <string>
 //#include <fstream>
 
-
+//git 修改測試
 #define closegr closegraph
 
-#define point   double               //還不知道浮點數的精準度是否影響向量繪圓的誤差... 
+#define point   double               //還不知道浮點數的精準度是否影響向量繪圓的誤差...
 
-#define tide    100000               //圓角度精準  圓周角/tide 
+#define tide    100000               //圓角度精準  圓周角/tide
 
-#define R       200                       //角度-座標比 之轉換用資料生成 圓函式 的半徑   亦可看為精準度 
+#define R       200                       //角度-座標比 之轉換用資料生成 圓函式 的半徑   亦可看為精準度
 
 using namespace std;
 
@@ -22,7 +22,7 @@ struct degree_struct
 {
   point tan_data[2][tide];
 };
- 
+
 degree_struct degree_structor(int x=0,int y=0,int r=R)
 {
   degree_struct degree;
@@ -34,7 +34,7 @@ degree_struct degree_structor(int x=0,int y=0,int r=R)
   do
   {
     switch(static_cast<int>(a*360/tide))
-    {                                     //抵銷誤差值 法2   
+    {                                     //抵銷誤差值 法2
       case 45:
         x=cx-r/sqrt(2),y=cy-r/sqrt(2.0);
           break;
@@ -80,15 +80,15 @@ class vector
   public:
     point vx,vy,vz;
     //friend vector& operator^()
-    // {                                  x,y,z軸變換後之新座標點角度轉換公式 
-    //  }                                  (sinC-sinO)*y / [(sinC-sinO)*x+x^2+y^2]  待分解 
+    // {                                  x,y,z軸變換後之新座標點角度轉換公式
+    //  }                                  (sinC-sinO)*y / [(sinC-sinO)*x+x^2+y^2]  待分解
 };
 
 class view
 {
   public:
     point Vx,Vy,Vz;
-  
+
   private:
 };
 
@@ -102,7 +102,7 @@ void Vbox(point x,point y,const int r)       //誤差抵銷前         Vbox向量繪圓  
   point copyx;
   do
   {
-    switch(static_cast<int>(a*360/tide))     //抵銷誤差值 法2 
+    switch(static_cast<int>(a*360/tide))     //抵銷誤差值 法2
     {
       case 45:
       	x=cx-r/sqrt(2),y=cy-r/sqrt(2.0);
@@ -130,10 +130,10 @@ void Vbox(point x,point y,const int r)       //誤差抵銷前         Vbox向量繪圓  
           break;
       default:
           break;
-	}          
+	}
     setcolor(GREEN);
-    //dx+=1.321/720;     // 抵銷誤差值  
-    // dy+=4.1693/720;    //                         
+    //dx+=1.321/720;     // 抵銷誤差值
+    // dy+=4.1693/720;    //
     copyx=x;
     cout<<a*360.0/tide<<endl;
     cout<<x-cx<<endl
@@ -191,7 +191,7 @@ else
 {
 system("PAUSE");
 exit(EXIT_FAILURE);
-}*/ 
+}*/
   int i = 1,p=1;
   int gd = DETECT, gm = 0;
   initgraph(&gd,&gm, "grafic.h"); /* BGI初始化 */
@@ -199,7 +199,7 @@ exit(EXIT_FAILURE);
   {
     do
     {
-      putpixel(300,300,RED); 
+      putpixel(300,300,RED);
       cin>>i;
       setcolor(RED);
       line(p+0,p+300,0+i,300+i);
@@ -209,11 +209,11 @@ exit(EXIT_FAILURE);
       i++;
     }
     while(1);
-	
+
     if(kbhit())
       break;
   }
-  getch(); 
+  getch();
   closegr();
   return 0;
 }
