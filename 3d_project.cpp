@@ -73,7 +73,7 @@ degree_struct degree_structor(int x=0,int y=0,int r=R)
   return degree;
 }
 
-degree_struct degree=degree_structor(0,0,R);
+//degree_struct degree=degree_structor(0,0,R);
 
 class vector
 {
